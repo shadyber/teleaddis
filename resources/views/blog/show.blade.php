@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title',$blog->title)
-@section('image','https://info251.com/'.$blog->photo)
+@section('image','https://teleAddis.com/'.$blog->photo)
 @section('detail',$blog->detail)
 
 @section('content')
