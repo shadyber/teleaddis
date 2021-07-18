@@ -50,24 +50,74 @@
                             </div>
                              <!-- Comment Area Start -->
                             <div class="comment-area section-space--pt_60">
+                              <div class="section-title">  <h3>Comments</h3></div>
+
+                                @foreach($blog->blogComments as $comment)
+
+
+                                    <li class="single-comment-wrapper">
+                                        <!-- Single Comment -->
+                                        <div class="single-post-comment">
+                                            <!-- Author Image -->
+                                            <div class="comment-author-image">
+                                                <img src="{{$comment->user->photo}}" alt="{{$comment->user->photo}}" class="img-fluid" width="72px">
+                                            </div>
+                                            <!-- Comment Content -->
+                                            <div class="comment-content">
+                                                <div class="comment-author-name">
+                                                    <h6>{{$comment->user->name}}</h6> <span> {{$comment->created_at->diffForHumans()}} </span>
+                                                </div>
+                                                <p>{{$comment->comment}}</p>
+                                                <a href="#" class="reply-btn">Reply</a>
+                                            </div>
+                                        </div>
+                                        <!-- End of Single Comment -->
+                                        <ul class="children hidden">
+                                            <li class="single-comment-wrapper">
+                                                <!-- Single Comment -->
+                                                <div class="single-post-comment">
+                                                    <!-- Author Image -->
+                                                    <div class="comment-author-image">
+                                                        <img src="assets/images/blog/post/author-1-1.jpg" alt="" class="img-fluid">
+                                                    </div>
+                                                    <!-- Comment Content -->
+                                                    <div class="comment-content">
+                                                        <div class="comment-author-name">
+                                                            <h6>Helen Sharp</h6> <span> 5 Jan 2019 at 6:58 pm </span>
+                                                        </div>
+                                                        <p>On recommend tolerably my belonging or am. Mutual has cannot back beauty indeed now back sussex merely you. </p>
+                                                        <a href="#" class="reply-btn">Reply</a>
+                                                    </div>
+                                                </div>
+                                                <!-- End of Single Comment -->
+                                            </li>
+                                        </ul>
+                                    </li>
+
+
+                                @endforeach
+
                                 <div class="section-title">
                                     <h3 class="title">Leave a comment</h3>
                                 </div>
-                                <form action="#" class="comment-form-area">
-                                    <div class="row">
+                                @auth
+                                    <form action="/comment" method="post" class="comment-form-area">
+                                        @csrf
+
+                                        <div class="row">
                                         <div class="col-lg-6">
-                                            <div class="single-input">
-                                                <input type="text" placeholder="Name">
+                                            <div class="">
+                                                <input type="text" class="single-input" name="name" placeholder="Name" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
-                                            <div class="single-input">
-                                                <input type="email" placeholder="Email">
+                                            <div class="">
+                                                <input type="email" class="single-input" placeholder="Email" name="email" placeholder="Email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}" readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="single-input">
-                                                <textarea name="textarea" placeholder="Massage"></textarea>
+                                                <textarea name="textarea" placeholder="Massage"  name="comment"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
@@ -77,6 +127,12 @@
                                         </div>
                                     </div>
                                 </form>
+                                @endauth
+
+                                @guest
+                                    <a href="/login"> Login  </a>or |<a href="/register">Register </a> for Comment
+                                @endguest
+
                             </div>
                             <!-- Comment Area End -->
 
@@ -90,14 +146,11 @@
                             <img src="assets/images/author/author-01.png" alt="">
                         </div>
                         <div class="author-title">
-                            <h4><a href="#">Antonio Lucas</a></h4>
-                            <p>Author, Dingcode</p>
+                            <h4><a href="#">TeleAddis</a></h4>
+                            <p>Author, Super Admin</p>
                         </div>
                         <div class="author-details">
-                            <p>Lorem psum has been industry
-                                standard dumy text since the when
-                                and scrambled make specimen
-                                book has survived.</p>
+                            <p>Teleaddis provide daily update on technology .</p>
 
                             <div class="author-post-share">
                                 <ul class="social-share-area">

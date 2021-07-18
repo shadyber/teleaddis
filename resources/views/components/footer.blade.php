@@ -13,14 +13,11 @@
                             <h4 class="title">Company</h4>
                         </div>
                         <ul class="footer-widget-menu-list">
-                            <li><a href="/privacy.html">Privacy Policy</a></li>
-                            <li><a href="#!">Discussion</a></li>
+                            <li><a href="/privacy.html">Privacy Policy</a></li> 
                             <li><a href="/terms">Terms & Conditions</a></li>
-                            <li><a href="/support">Customer Support</a></li>
                             <li><a href="/faq">Course FAQ’s</a></li>
                             <li><a href="/aboutus">About Us</a></li>
                             <li><a href="/contactus">Contact Us</a></li>
-                            <li><a href="/adspolicy">Local Print Ads</a></li>
                         </ul>
                     </div>
                 </div>
@@ -45,14 +42,9 @@
                             <h4 class="title">All Resource</h4>
                         </div>
                         <ul class="footer-widget-menu-list">
-                            <li><a href="#!">Basic Features</a></li>
-                            <li><a href="#!">Advanced Features</a></li>
-                            <li><a href="#!">Enterprise Hosting</a></li>
-                            <li><a href="#!">Agency Hosting</a></li>
-                            <li><a href="#!">Multisite Hosting</a></li>
-                            <li><a href="#!">WordPress Hosting</a></li>
-                            <li><a href="#!">Magento Hosting</a></li>
-                            <li><a href="#!">Laravel Hosting</a></li>
+                            <li><a href="/video">videos</a></li>
+                            <li><a href="/blog">Articles</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -61,7 +53,7 @@
                     <div class="footer-widget footer-item-space">
                         <div class="footer-logo">
                             <a href="index.html">
-                                <img src="assets/images/logo/logo-4.png" alt="">
+                                <img src="/assets/images/logo/logo-4.png" alt="">
                             </a>
                         </div>
                         <p>Lorem Ipsum is simply dummy text
