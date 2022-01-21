@@ -13,7 +13,7 @@
                             <h4 class="title">Company</h4>
                         </div>
                         <ul class="footer-widget-menu-list">
-                            <li><a href="/privacy.html">Privacy Policy</a></li> 
+                            <li><a href="/privacy.html">Privacy Policy</a></li>
                             <li><a href="/terms">Terms & Conditions</a></li>
                             <li><a href="/faq">Course FAQ’s</a></li>
                             <li><a href="/aboutus">About Us</a></li>
@@ -96,7 +96,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="copy-right-center">
-                        <p>© 2021 <a href="#">teleAddis</a>. Made with ❤️ by <a target="_blank" rel="noopener" href="https://rootsystem.info/">teleAddiss</a></p>
+                        <p>© 2021 <a href="#">teleAddis</a>. Made with ❤️ by <a target="_blank" rel="noopener" href="https://rootsystemset.com">r∞t system</a></p>
                     </div>
                 </div>
             </div>

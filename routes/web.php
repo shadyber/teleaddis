@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\BlogCategoryController;
+use App\Http\Controllers\BlogCommentController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
@@ -72,8 +74,8 @@ Route::get('/migrate', function (){
     \Illuminate\Support\Facades\Artisan::call('migrate');
 });
 
-Route::resource('/comment', App\Http\Controllers\BlogCommentController::class);
-Route::resource('/newsletters', App\Http\Controllers\NewsletterController::class);
+Route::resource('/comment', BlogCommentController::class);
+Route::resource('/newsletters', NewsletterController::class);
 
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 
@@ -170,7 +172,7 @@ Route::get('sitemap', function() {
 
         // add every post to the sitemap
         foreach ($posts as $post) {
-            $sitemap->add('/blog/'.$post->slug, $post->updated_at, 1, 'daily');
+            $sitemap->add(URL::to('/').'/blog/'.$post->slug, $post->updated_at, '1.0', 'daily');
         }
 
 
@@ -179,8 +181,17 @@ Route::get('sitemap', function() {
 
         // add every post to the sitemap
         foreach ($videos as $post) {
-            $sitemap->add('/video/'.$post->slug, $post->updated_at, 1, 1);
+            $sitemap->add(URL::to('/').'/video/'.$post->slug, $post->updated_at, '1.0', 'daily');
         }
+
+        // get all posts from db
+        $images = DB::table('blogs')->orderBy('created_at', 'desc')->get();
+
+        // add every post to the sitemap
+        foreach ($images as $post) {
+            $sitemap->add($post->thumb, $post->updated_at, '1.0', 'daily');
+        }
+
 
     }
 
