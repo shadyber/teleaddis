@@ -53,10 +53,10 @@
                                     <a href="#"><img src="/assets/images/icons/heart.png" alt=""></a>
                                 </div>
                             </div>
-                            <h3 class="following-blog-post-title">
+                            <h4 class="following-blog-post-title">
                                 <a href="#">{{$video->title}}
                                 </a>
-                            </h3>
+                            </h4>
 
 
 
@@ -85,7 +85,7 @@
                                                         <div class="cats"><a href="/category/{{$video->category->slug}}"> {{$video->category->title}} </a></div>
                                                         <!-- Title -->
                                                         <div class="title">
-                                                            <h2><a href="/video/{{$video->slug}}">{{$video->title}}</a></h2>
+                                                            <h4><a href="/video/{{$video->slug}}">{{$video->title}}</a></h4>
                                                         </div>
                                                         <!-- Post Desc -->
                                                         <div class="desc">

@@ -32,7 +32,7 @@
         <div class="form-group mb-4">
             <label class="col-md-12 p-0">{{__('Icon')}}</label>
             <div class="col-md-12 border-bottom p-0">
-                <input type="text" name="icon" placeholder="{{__('Icon')}}" class="form-control p-0 border-0   @error('icon') is-invalid @enderror"> </div>
+                <input type="text" name="icon" placeholder="{{__('Icon')}}" class="form-control p-0 border-0     @error('icon') is-invalid @enderror" value="fa fa-category"> </div>
             @error('icon')
             <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>

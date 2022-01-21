@@ -15,7 +15,8 @@
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
-        "laravelcollective/html": "^6.2"
+        "laravelcollective/html": "^6.2",
+        "laravelium/sitemap": "^8.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -57,7 +58,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
