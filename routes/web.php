@@ -187,6 +187,16 @@ Route::get('sitemap', function() {
         foreach ($posts as $post) {
             $sitemap->add('/blog/'.$post->slug, $post->updated_at, 1, 1);
         }
+
+
+        // get all posts from db
+        $videos = DB::table('videos')->orderBy('created_at', 'desc')->get();
+
+        // add every post to the sitemap
+        foreach ($videos as $post) {
+            $sitemap->add('/video/'.$post->slug, $post->updated_at, 1, 1);
+        }
+
     }
 
     // show your sitemap (options: 'xml' (default), 'html', 'txt', 'ror-rss', 'ror-rdf')
