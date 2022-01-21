@@ -2,14 +2,16 @@
 
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\URL;
 
@@ -33,11 +35,11 @@ Auth::routes();
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
-Route::get('/userprofile', [App\Http\Controllers\ProfileController::class, 'index'])->name('userprofile');
+Route::get('/userprofile', [ProfileController::class, 'index'])->name('userprofile');
 
 Route::resource('/blog', BlogController::class);
 Route::resource('/video', VideoController::class);
@@ -53,7 +55,7 @@ Route::get('/icons',function (){
     return view('icons');
 });
 
-Route::get('/search', [App\Http\Controllers\SearchController::class,'search'])->name('search');
+Route::get('/search', [SearchController::class,'search'])->name('search');
 
 Route::get('/terms', function (){
     return view('terms');
@@ -95,9 +97,9 @@ Route::get('/newapp', function (){
 
 Route::group(['middleware' => 'role:admin'], function() {
 
-    Route::resource('/user', App\Http\Controllers\UserController::class);
-    Route::resource('/permission', App\Http\Controllers\PermissionController::class);
-    Route::resource('/role', App\Http\Controllers\RoleController::class);
+    Route::resource('/user', UserController::class);
+    Route::resource('/permission', PermissionController::class);
+    Route::resource('/role', RoleController::class);
 
     Route::get('/init', function (){
 
@@ -161,31 +163,14 @@ Route::get('sitemap', function() {
     if (!$sitemap->isCached()) {
         // add item to the sitemap (url, date, priority, freq)
         $sitemap->add(URL::to('/'), '2012-08-25T20:10:00+02:00', '1.0', 'daily');
-        $sitemap->add(URL::to('page'), '2012-08-26T12:30:00+02:00', '0.9', 'monthly');
 
-        // add item with translations (url, date, priority, freq, images, title, translations)
-        $translations = [
-            ['language' => 'fr', 'url' => URL::to('pageFr')],
-            ['language' => 'de', 'url' => URL::to('pageDe')],
-            ['language' => 'bg', 'url' => URL::to('pageBg')],
-            ['language' => 'en', 'url' => URL::to('pageUs')],
-        ];
-        $sitemap->add(URL::to('pageEn'), '2015-06-24T14:30:00+02:00', '0.9', 'monthly', [], null, $translations);
-
-        // add item with images
-        $images = [
-            ['url' => URL::to('images/pic1.jpg'), 'title' => 'Image title', 'caption' => 'Image caption', 'geo_location' => 'Plovdiv, Bulgaria'],
-            ['url' => URL::to('images/pic2.jpg'), 'title' => 'Image title2', 'caption' => 'Image caption2'],
-            ['url' => URL::to('images/pic3.jpg'), 'title' => 'Image title3'],
-        ];
-        $sitemap->add(URL::to('blog'), '2015-06-24T14:30:00+02:00', '0.9', 'monthly', $images);
 
         // get all posts from db
         $posts = DB::table('blogs')->orderBy('created_at', 'desc')->get();
 
         // add every post to the sitemap
         foreach ($posts as $post) {
-            $sitemap->add('/blog/'.$post->slug, $post->updated_at, 1, 1);
+            $sitemap->add('/blog/'.$post->slug, $post->updated_at, 1, 'daily');
         }
 
 
@@ -194,7 +179,7 @@ Route::get('sitemap', function() {
 
         // add every post to the sitemap
         foreach ($videos as $post) {
-            $sitemap->add('/video/'.$post->slug, $post->updated_at, 1, 1);
+            $sitemap->add('/video/'.$post->slug, $post->updated_at, 1, 'daily');
         }
 
     }
