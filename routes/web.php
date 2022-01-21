@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BlogCategoryController;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -36,11 +39,11 @@ Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])
 
 Route::get('/userprofile', [App\Http\Controllers\ProfileController::class, 'index'])->name('userprofile');
 
-Route::resource('/blog', App\Http\Controllers\BlogController::class);
-Route::resource('/video', App\Http\Controllers\VideoController::class);
-Route::resource('/category', App\Http\Controllers\BlogCategoryController::class);
+Route::resource('/blog', BlogController::class);
+Route::resource('/video', VideoController::class);
+Route::resource('/category', BlogCategoryController::class);
 
-Route::resource('/contact',App\Http\Controllers\ContactUsController::class);
+Route::resource('/contact',ContactUsController::class);
 
 Route::get('/subscribe',function (){
     return view('subscribe');
@@ -182,7 +185,7 @@ Route::get('sitemap', function() {
 
         // add every post to the sitemap
         foreach ($posts as $post) {
-            $sitemap->add($post->slug, $post->updated_at, 1, 1);
+            $sitemap->add('/blog/'.$post->slug, $post->updated_at, 1, 1);
         }
     }
 
