@@ -2,10 +2,13 @@
 @section('title','Videos Index')
 @section('content')
 
-    <div class="container pt-120 pb-90">
 
 
-        @foreach($videos->chunk(3) as $chunk)
+    <div class="blog-details-wrapper section-space--ptb_80">
+        <div class="container">
+            <div class="row row--17">
+
+            @foreach($videos->chunk(3) as $chunk)
 
             <div class="row">
                 @foreach($chunk as $video)
@@ -38,20 +41,12 @@
 
                 @endforeach
             </div>
-    @endforeach
-
-
-
-    <!-- Post Pagination -->
-        <div class="post-pagination d-flex justify-content-center">
-
-            {{ $videos->links('vendor.pagination.bootstrap-4') }}
-
+                @endforeach
+            </div>
         </div>
-        <!-- End of Post Pagination -->
     </div>
 
 
-
+    {{ $videos->links('vendor.pagination.bootstrap-4') }}
 
 @endsection

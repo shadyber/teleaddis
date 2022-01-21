@@ -8,7 +8,7 @@
         <div class="container">
             <div class="header-style-center">
                 <div class="logo">
-                    <a href="/l">
+                    <a href="/">
                         <img src="/assets/images/logo/logo-4.png" alt="" />
                     </a>
                 </div>

@@ -50,11 +50,7 @@
                             class="hide-menu">Manage Roles</span></a></li>
 
 
-                <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                            href="/permission" aria-expanded="false"><i class="fa fa-users"
-                                                                                        aria-hidden="true"></i><span
-                            class="hide-menu">Manage Permissions</span></a></li>
-                <hr>
+
 
                 <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
                                             href="/newsletters" aria-expanded="false"><i class="fa fa-info-circle"
