@@ -6,14 +6,14 @@
 
     <title>Tele Addis</title>
 
-    <meta name="description" content="teleAddis is one of the most popular blog template">
+    <meta name="description" content="teleAddis is one of the best blog created on cyber technology ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <link rel="canonical" href="#" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="teleAddis - Blog HTML Template" />
+    <meta property="og:title" content="teleAddis - Updated Information and news about cyber technology" />
     <meta property="og:url" content="" />
     <meta property="og:site_name" content="" />
     <meta property="og:image" content="" />
@@ -268,7 +268,7 @@
         <!-- Recent Article Area End -->
 
         <!-- Testimonial Area Start -->
-        <div class="testimonial-area bg-gray section-space--ptb_120">
+        <div class="testimonial-area bg-gray section-space--ptb_120" style="display: none;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
