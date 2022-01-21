@@ -9,11 +9,11 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\URL;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -179,7 +179,7 @@ Route::get('sitemap', function() {
 
         // add every post to the sitemap
         foreach ($videos as $post) {
-            $sitemap->add('/video/'.$post->slug, $post->updated_at, 1, 'daily');
+            $sitemap->add('/video/'.$post->slug, $post->updated_at, 1, 1);
         }
 
     }
