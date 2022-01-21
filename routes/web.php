@@ -121,6 +121,7 @@ Route::group(['middleware' => 'role:admin'], function() {
 });
 
 
+Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile');
 Route::get('/restart-server',function (){
 
     $exitCode = Artisan::call('route:clear');
