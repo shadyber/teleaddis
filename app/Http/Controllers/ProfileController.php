@@ -12,6 +12,6 @@ class ProfileController extends Controller
         if(!Auth::user()->hasRole('admin')){
             return view('profile');
         }
-        return view('home');
+        return view('profile');
     }
 }

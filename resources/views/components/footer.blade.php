@@ -10,14 +10,14 @@
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 footer-border">
                     <div class="single-footer-menu-item footer-item-space">
                         <div class="footer-widget-title">
-                            <h4 class="title">Company</h4>
+                            <h4 class="title">TeleAddis</h4>
                         </div>
                         <ul class="footer-widget-menu-list">
-                            <li><a href="/privacy.html">Privacy Policy</a></li>
+                            <li><a href="/terms">Privacy Policy</a></li>
                             <li><a href="/terms">Terms & Conditions</a></li>
                             <li><a href="/faq">Course FAQ’s</a></li>
-                            <li><a href="/aboutus">About Us</a></li>
-                            <li><a href="/contactus">Contact Us</a></li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -52,14 +52,12 @@
                 <div class="col-xl-3 col-lg-3 offset-xl-1 col-md-6 col-sm-6 footer-border">
                     <div class="footer-widget footer-item-space">
                         <div class="footer-logo">
-                            <a href="index.html">
+                            <a href="/">
                                 <img src="/assets/images/logo/logo-4.png" alt="">
                             </a>
                         </div>
-                        <p>Lorem Ipsum is simply dummy text
-                            the printing and typesetting industry
-                            has been the industry's standard
-                            text ever since.
+                        <p>
+                            About Us
                         </p>
                         <ul class="footer-socail-share">
                             <li><a href="#"><i class="icofont-facebook"></i></a></li>

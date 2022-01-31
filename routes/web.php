@@ -36,12 +36,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Auth::routes(['verify' => true]);
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-
-Route::get('/userprofile', [ProfileController::class, 'index'])->name('userprofile');
+ Route::get('/userprofile', [ProfileController::class, 'index'])->name('userprofile');
 
 Route::resource('/blog', BlogController::class);
 Route::resource('/video', VideoController::class);
@@ -66,9 +61,7 @@ Route::get('/terms', function (){
 Route::get('/about', function (){
     return view('about');
 });
-Route::get('/dashboard', function (){
-    return view('dashboard');
-});
+
 
 Route::get('/migrate', function (){
     \Illuminate\Support\Facades\Artisan::call('migrate');
@@ -84,21 +77,19 @@ Route::get('/notifications',[App\Http\Controllers\NotificationsController::class
 Route::get('/notifications/{id}',[App\Http\Controllers\NotificationsController::class,'show'])->name('notification.read');
 
 
-
-
-Route::get('/profile', [App\Http\Controllers\ProfileController::class,'index'])->name('admin_profile');
-
 Route::get('/newapp', function (){
     \Illuminate\Support\Facades\Artisan::call('migrate:fresh');
     \Illuminate\Support\Facades\Artisan::call('db:seed');
     echo 'initialized';
 });
 
-
-
+Route::resource('/home', App\Http\Controllers\HomeController::class);
 
 Route::group(['middleware' => 'role:admin'], function() {
 
+    Route::resource('/profile', App\Http\Controllers\ProfileController::class);
+    Route::resource('/dashboard', App\Http\Controllers\ProfileController::class);
+    Route::resource('/home', App\Http\Controllers\ProfileController::class);
     Route::resource('/user', UserController::class);
     Route::resource('/permission', PermissionController::class);
     Route::resource('/role', RoleController::class);
@@ -131,7 +122,6 @@ Route::group(['middleware' => 'role:admin'], function() {
 });
 
 
-Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile');
 Route::get('/restart-server',function (){
 
     $exitCode = Artisan::call('route:clear');
