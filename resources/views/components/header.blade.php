@@ -35,6 +35,18 @@
 
                             </li>
                             <li><a href="/contact"><span>Contact </span></a></li>
+                            <li class="has-children">
+                                <a class="" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ Config::get('languages')[App::getLocale()] }}
+                                </a>
+                                <div class="submenu"  >
+                                    @foreach (Config::get('languages') as $lang => $language)
+                                        @if ($lang != App::getLocale())
+                                            <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"> {{$language}}</a>
+                                        @endif
+                                    @endforeach
+                                </div>
+                            </li>
                         </ul>
                     </nav>
                 </div>

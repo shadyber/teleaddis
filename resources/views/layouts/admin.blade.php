@@ -251,7 +251,7 @@
         <!-- ============================================================== -->
         <!-- footer -->
         <!-- ============================================================== -->
-        <footer class="footer text-center"> 2020 © TeleAddis Admin brought to you by <a
+        <footer class="footer text-center"> 2022 © TeleAddis Admin brought to you by <a
                 href="https://rootsystem.info">root system</a>
         </footer>
         <!-- ============================================================== -->
