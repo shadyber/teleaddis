@@ -107,7 +107,7 @@ class BlogController extends Controller
 
         $users=User::all();
         foreach ($users as $user){
-            $user->Notify(new BlogCreatedNotification($lastblog));
+          //  $user->Notify(new BlogCreatedNotification($lastblog));
         }
 
         return redirect()->back()->with('success','Article Created Succusfully!');
