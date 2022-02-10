@@ -61,7 +61,7 @@
                     @if (Route::has('login'))
 
                         @auth
-                            <a href="{{ url('/home') }}" class="sign-up-action-button btn-medium btn">Home</a>
+                            <a href="{{ url('/home') }}" class="sign-up-action-button btn-medium btn">{{__('Home')}}</a>
                             <a href="{{route('logout')}}"><span class="fa-power-off"></span></a>
                         @else
                             <a href="{{ route('login') }}" class="sign-up-action-button btn-medium btn">Log in</a>

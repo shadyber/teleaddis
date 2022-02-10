@@ -48,9 +48,9 @@
                             <div class="post-details-text">
                                 {!! $blog->detail !!}
                             </div>
-                             <!-- Comment Area Start -->
+                            <!-- Comment Area Start -->
                             <div class="comment-area section-space--pt_60">
-                              <div class="section-title">  <h3>Comments</h3></div>
+                                <div class="section-title">  <h3>Comments</h3></div>
 
                                 @foreach($blog->blogComments as $comment)
 
@@ -105,28 +105,28 @@
                                         @csrf
 
                                         <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="">
-                                                <input type="text" class="single-input" name="name" placeholder="Name" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
+                                            <div class="col-lg-6">
+                                                <div class="">
+                                                    <input type="text" class="single-input" name="name" placeholder="Name" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="">
+                                                    <input type="email" class="single-input" placeholder="Email" name="email" placeholder="Email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="single-input">
+                                                    <textarea name="textarea" placeholder="Massage"  name="comment"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="submit-button text-center">
+                                                    <button class="btn-large btn-primary" type="submit"> Submit Now <i class="icofont-long-arrow-right"></i></button>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div class="">
-                                                <input type="email" class="single-input" placeholder="Email" name="email" placeholder="Email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="single-input">
-                                                <textarea name="textarea" placeholder="Massage"  name="comment"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="submit-button text-center">
-                                                <button class="btn-large btn-primary" type="submit"> Submit Now <i class="icofont-long-arrow-right"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
+                                    </form>
                                 @endauth
 
                                 @guest
@@ -135,6 +135,57 @@
 
                             </div>
                             <!-- Comment Area End -->
+                            <div class="pt-10"></div>
+                            <div class="container">
+                                <div class="row row--17">
+
+
+                                    @foreach(\App\Models\Blog::lastN(6)->chunk(3) as $chunk)
+
+                                        <div class="row">
+                                            @foreach($chunk as $blog)
+
+                                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                                    <!-- Single Following Post Start -->
+                                                    <div class="single-following-post aos-init aos-animate" data-aos="fade-up">
+                                                        <a href="/blog/{{$blog->slug}}" class="following-post-thum">
+                                                            <img src="{{$blog->thumb}}" alt="{{$blog->title}}">
+                                                        </a>
+                                                        <div class="following-post-content">
+                                                            <div class="following-blog-post-top">
+                                                                <div class="trending-blog-post-category">
+                                                                    <a href="/blog/{{$blog->slug}}" class="business">{{$blog->Category->title}}</a>
+                                                                </div>
+                                                                <div class="following-blog-post-author">
+                                                                    By <a href="#">{{$blog->user->name}}</a>
+                                                                </div>
+                                                            </div>
+                                                            <h5 class="following-blog-post-title">
+                                                                <a href="/blog/{{$blog->slug}}">{{$blog->title}}
+                                                                </a>
+                                                            </h5>
+                                                            <div class="following-blog-post-meta">
+                                                                <div class="post-meta-left-side">
+                                            <span class="post-date">
+                                            <i class="icofont-ui-calendar"></i>
+                                            <a href="#">0{{$blog->created_at->diffForHumans()}}</a>
+                                        </span>
+                                                                    <span>10 min read</span>
+                                                                </div>
+                                                                <div class="post-meta-right-side">
+                                                                    <a href="#"><img src="/assets/images/icons/small-bookmark.png" alt=""></a>
+                                                                    <a href="#"><img src="/assets/images/icons/heart.png" alt=""></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- Single Following Post End -->
+                                                </div>
+
+                                            @endforeach
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
 
 
                         </div>
@@ -169,14 +220,14 @@
 
                     <!-- Hero Category Area Start -->
                     <div class="blog-details-category-area mt-5">
-                       @foreach(\App\Models\BlogCategory::allCategories() as $category)
-                        <a class="single-hero-category-item">
-                            <img src="{{$category->icon}}" alt="">
-                            <div class="hero-category-inner-box">
-                                <h3 class="title">{{$category->title}}</h3>
-                                <i class="icon icofont-long-arrow-right"></i>
-                            </div>
-                        </a>
+                        @foreach(\App\Models\BlogCategory::allCategories() as $category)
+                            <a class="single-hero-category-item">
+                                <img src="{{$category->icon}}" alt="">
+                                <div class="hero-category-inner-box">
+                                    <h3 class="title">{{$category->title}}</h3>
+                                    <i class="icon icofont-long-arrow-right"></i>
+                                </div>
+                            </a>
                         @endforeach
 
                     </div><!-- Hero Category Area End -->
@@ -196,27 +247,27 @@
                             <div class="swiper-wrapper" id="swiper-wrapper-a1092155aa14feb9d" aria-live="polite" style="transform: translate3d(-285px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active swiper-slide-prev" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 285px;">
                                     <div class="latest-post-box">
 
-                                      @foreach(\App\Models\Blog::lastN(5) as $post)
+                                    @foreach(\App\Models\Blog::lastN(5) as $post)
                                         <!-- Single Latest Post Start -->
-                                        <div class="single-latest-post">
-                                            <div class="latest-post-thum">
-                                                <a href="#">
-                                                    <img src="{{$post->thumb}}" alt="{{$post->title}}">
-                                                </a>
-                                            </div>
-                                            <div class="latest-post-content">
-                                                <h6 class="title"><a href="#!">{{$post->title}}</a>
-                                                </h6>
-                                                <div class="latest-post-meta">
+                                            <div class="single-latest-post">
+                                                <div class="latest-post-thum">
+                                                    <a href="#">
+                                                        <img src="{{$post->thumb}}" alt="{{$post->title}}">
+                                                    </a>
+                                                </div>
+                                                <div class="latest-post-content">
+                                                    <h6 class="title"><a href="#!">{{$post->title}}</a>
+                                                    </h6>
+                                                    <div class="latest-post-meta">
                                                             <span class="post-date">
                                                             <i class="icofont-ui-calendar"></i>
                                                             <a href="#">{{$post->created_at->diffForHumans()}}</a>
                                                         </span>
-                                                    <span>10 min read</span>
+                                                        <span>10 min read</span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div><!-- Single Latest Post End -->
-                                      @endforeach
+                                            </div><!-- Single Latest Post End -->
+                                        @endforeach
 
                                     </div>
                                 </div>
