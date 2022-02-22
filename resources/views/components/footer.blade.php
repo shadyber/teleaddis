@@ -29,7 +29,7 @@
                         </div>
                         <ul class="footer-widget-menu-list">
                             @foreach(\App\Models\BlogCategory::allCategories() as $category)
-                            <li><a href="/category/{{$category->slug}}">{{$category->title}}</a></li>
+                            <li><a href="/category/{{$category->slug}}">{{__($category->title)}}</a></li>
                             @endforeach
 
                         </ul>
@@ -42,7 +42,7 @@
                             <h4 class="title">{{__('All')}} {{__('Resource')}}</h4>
                         </div>
                         <ul class="footer-widget-menu-list">
-                            <li><a href="/video">__{{__('videos')}}</a></li>
+                            <li><a href="/video">{{__('Videos')}}</a></li>
                             <li><a href="/blog">{{__('Articles')}}</a></li>
 
                         </ul>
@@ -57,7 +57,7 @@
                             </a>
                         </div>
                         <p>
-                            About Us
+                            {{__( 'About')}}
                         </p>
                         <ul class="footer-socail-share">
                             <li><a href="#"><i class="icofont-facebook"></i></a></li>
