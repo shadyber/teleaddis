@@ -39,11 +39,11 @@
                 <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 footer-border">
                     <div class="single-footer-menu-item footer-item-space">
                         <div class="footer-widget-title">
-                            <h4 class="title">All Resource</h4>
+                            <h4 class="title">{{__('All')}} {{__('Resource')}}</h4>
                         </div>
                         <ul class="footer-widget-menu-list">
-                            <li><a href="/video">videos</a></li>
-                            <li><a href="/blog">Articles</a></li>
+                            <li><a href="/video">__{{__('videos')}}</a></li>
+                            <li><a href="/blog">{{__('Articles')}}</a></li>
 
                         </ul>
                     </div>
@@ -102,5 +102,6 @@
     </div>
 </footer>
 <!--=====  End of footer area ========-->
+
 
 

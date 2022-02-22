@@ -16,25 +16,25 @@
                     <nav class="navigation-menu navigation-menu-white">
                         <ul>
                             <li class="active">
-                                <a href="/"><span>Home</span></a>
+                                <a href="/"><span>{{__('Home')}}</span></a>
 
                             </li>
                             <li>
-                                <a href="/about"><span>About</span></a>
+                                <a href="/about"><span>{{__('About')}}</span></a>
                             </li>
-                            <li class="has-children"><a href="/blog"><span>Articles</span></a>
+                            <li class="has-children"><a href="/blog"><span>{{__('Articles')}}</span></a>
                                 <ul class="submenu">
-                                    <li><a href="/blog"><span>All articles</span></a> </li>
+                                    <li><a href="/blog"><span>{{__('All')}} {{__('Articles')}}</span></a> </li>
                                     @foreach(\App\Models\BlogCategory::allCategories() as $category)
                                     <li><a href="/category/{{$category->slug}}"><span>{{$category->title}}</span></a> </li>
                                     @endforeach
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="/video"><span>Videos</span></a>
+                                <a href="/video"><span>{{__('Videos')}}</span></a>
 
                             </li>
-                            <li><a href="/contact"><span>Contact </span></a></li>
+                            <li><a href="/contact"><span>{{__('Contact')}} </span></a></li>
                             <li class="has-children">
                                 <a class="" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ Config::get('languages')[App::getLocale()] }}
@@ -64,10 +64,10 @@
                             <a href="{{ url('/home') }}" class="sign-up-action-button btn-medium btn">{{__('Home')}}</a>
                             <a href="{{route('logout')}}"><span class="fa-power-off"></span></a>
                         @else
-                            <a href="{{ route('login') }}" class="sign-up-action-button btn-medium btn">Log in</a>
+                            <a href="{{ route('login') }}" class="sign-up-action-button btn-medium btn">{{__('Login')}}</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="sign-up-action-button btn-medium btn">Register</a>
+                                <a href="{{ route('register') }}" class="sign-up-action-button btn-medium btn">{{__('Register')}}</a>
                         @endif
                     @endauth
 
