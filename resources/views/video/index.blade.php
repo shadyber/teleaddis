@@ -17,15 +17,15 @@
                         <div class="post-default">
                             <div class="post-thumb">
                                 <a href="/video/{{$video->slug}}">
-                                    <img src="{{$video->thumb_small}}" alt="{{$video->title}}" class="img-fluid">
+                                    <img src="{{$video->thumb_small}}" alt="{{__($video->title)}}" class="img-fluid">
                                 </a>
                             </div>
                             <div class="post-data">
                                 <!-- Category -->
-                                <div class="cats"><a href="/category/{{$video->category->slug}}"> {{$video->category->title}} </a></div>
+                                <div class="cats"><a href="/category/{{$video->category->slug}}"> {{__($video->category->title)}} </a></div>
                                 <!-- Title -->
                                 <div class="title">
-                                    <h4><a href="/video/{{$video->slug}}">{{$video->title}}</a></h4>
+                                    <h4><a href="/video/{{$video->slug}}">{{__($video->title)}}</a></h4>
                                 </div>
                                 <!-- Post Desc -->
                                 <div class="desc">

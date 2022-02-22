@@ -19,19 +19,19 @@
                     <!-- Single Following Post Start -->
                     <div class="single-following-post aos-init aos-animate" data-aos="fade-up">
                         <a href="/blog/{{$blog->slug}}" class="following-post-thum">
-                            <img src="{{$blog->thumb}}" alt="{{$blog->title}}">
+                            <img src="{{$blog->thumb}}" alt="{{__($blog->title)}}">
                         </a>
                         <div class="following-post-content">
                             <div class="following-blog-post-top">
                                 <div class="trending-blog-post-category">
-                                    <a href="/blog/{{$blog->slug}}" class="business">{{$blog->Category->title}}</a>
+                                    <a href="/blog/{{$blog->slug}}" class="business">{{__($blog->Category->title)}}</a>
                                 </div>
                                 <div class="following-blog-post-author">
                                     By <a href="#">{{$blog->user->name}}</a>
                                 </div>
                             </div>
                             <h5 class="following-blog-post-title">
-                                <a href="/blog/{{$blog->slug}}">{{$blog->title}}
+                                <a href="/blog/{{$blog->slug}}">{{__($blog->title)}}
                                 </a>
                             </h5>
                             <div class="following-blog-post-meta">

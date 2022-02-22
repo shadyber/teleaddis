@@ -156,14 +156,14 @@
                                                         <div class="following-post-content">
                                                             <div class="following-blog-post-top">
                                                                 <div class="trending-blog-post-category">
-                                                                    <a href="/blog/{{$blog->slug}}" class="business">{{$blog->Category->title}}</a>
+                                                                    <a href="/blog/{{$blog->slug}}" class="business">{{__($blog->Category->title)}}</a>
                                                                 </div>
                                                                 <div class="following-blog-post-author">
                                                                     By <a href="#">{{$blog->user->name}}</a>
                                                                 </div>
                                                             </div>
                                                             <h5 class="following-blog-post-title">
-                                                                <a href="/blog/{{$blog->slug}}">{{$blog->title}}
+                                                                <a href="/blog/{{$blog->slug}}">{{__($blog->title)}}
                                                                 </a>
                                                             </h5>
                                                             <div class="following-blog-post-meta">
@@ -269,7 +269,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="latest-post-content">
-                                                    <h6 class="title"><a href="#!">{{$post->title}}</a>
+                                                    <h6 class="title"><a href="#!">{{__($post->title)}}</a>
                                                     </h6>
                                                     <div class="latest-post-meta">
                                                             <span class="post-date">
@@ -303,7 +303,7 @@
                                                             <i class="icofont-ui-calendar"></i>
                                                             <a href="#">{{$post->created_at->diffForHumans()}}</a>
                                                         </span>
-                                                        <span>10 min read</span>
+                                                        <span>10 min {{__('read')}}</span>
                                                     </div>
                                                 </div>
                                             </div><!-- Single Latest Post End -->
@@ -329,7 +329,7 @@
                                                             <i class="icofont-ui-calendar"></i>
                                                             <a href="#">{{$post->created_at->diffForHumans()}}</a>
                                                         </span>
-                                                        <span>10 min read</span>
+                                                        <span>{{$post->visit}} {{__('read')}}</span>
                                                     </div>
                                                 </div>
                                             </div><!-- Single Latest Post End -->
