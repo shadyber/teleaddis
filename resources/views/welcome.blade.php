@@ -95,7 +95,7 @@
 
                                         <h1 class="title"><a href="/blog">
                                            We Care About Your Phone  </a>
-                                            <p>Join our community for more information on smart phone and current technology</p>
+
                                         </h1>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@
                         <div class="hero-four-category">
                             <div class="category-step-1" data-aos="fade-up">
                                 @foreach(\App\Models\BlogCategory::all() as $category)
-                                <a href="/category/{{$category->slug}}" class="btn-primary-four btn-large">{{$category->title}} </a>
+                                <a href="/category/{{$category->slug}}" class="btn-primary-four btn-large">{{__($category->title)}} </a>
                                     @endforeach
                             </div>
                         </div>
@@ -148,10 +148,7 @@
 
                 <div class="row row--30">
                     @foreach(\App\Models\Blog::lastN(2) as $blog)
-
-
-
-                    <div class="@if(($i++%2)==0) col-lg-8 @else col-lg-4 @endif">
+                      <div class="@if(($i++%2)==0) col-lg-8 @else col-lg-4 @endif">
                         <!-- Single Most Populer Item Start -->
                         <div class="single-most-populer-item" data-aos="fade-up">
                             <a href="#!" class="most-populer-thum">
@@ -168,7 +165,7 @@
                                         <span class="post-date">
                                         <a href="#">{{$blog->created_at->diffForHumans()}}</a>
                                     </span>
-                                    <span>{{$blog->visit}} read</span>
+                                    <span>{{$blog->visit}} {{__('read')}}</span>
                                 </div>
                             </div>
                         </div>

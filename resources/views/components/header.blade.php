@@ -27,7 +27,7 @@
                                 <ul class="submenu">
                                     <li><a href="/blog"><span>{{__('All')}} {{__('Articles')}}</span></a> </li>
                                     @foreach(\App\Models\BlogCategory::allCategories() as $category)
-                                    <li><a href="/category/{{$category->slug}}"><span>{{$category->title}}</span></a> </li>
+                                    <li><a href="/category/{{$category->slug}}"><span>{{__($category->title)}}</span></a> </li>
                                     @endforeach
                                 </ul>
                             </li>
