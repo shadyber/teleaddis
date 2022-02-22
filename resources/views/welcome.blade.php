@@ -105,8 +105,9 @@
                                             <span class="time">10 min read</span>
                                         </div>
 
-                                        <h1 class="title"><a href="/blog/1">
+                                        <h1 class="title"><a href="/blog">
                                            We Care About Your Phone  </a>
+                                            <p></p>
                                         </h1>
                                     </div>
                                 </div>
@@ -383,12 +384,12 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="newsletter-four-box text-center">
-                            <h2 class="title">Subscribe For Newsletter</h2>
-                            <p>93+ People Subscribe today.</p>
+                            <h2 class="title">{{__('Subscribe')}} {{__('For')}} {{__('Newsletter')}}</h2>
+                            <p>93+ People {{__('Subscribed')}} {{__('today')}}.</p>
                             <div class="newsletter-input-box">
-                                <input class="newsletter-input" type="text" placeholder="Enter your email">
+                                <input class="newsletter-input" type="text" placeholder="{{__('Enter your email')}}">
                                 <div class="button-box">
-                                    <a href="#" class="btn-primary btn-bg-4 btn-large">Subscribe Now</a>
+                                    <a href="#" class="btn-primary btn-bg-4 btn-large">{{__('Subscribe')}} {{__('Now')}}</a>
                                 </div>
                             </div>
                         </div>

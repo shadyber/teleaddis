@@ -13,11 +13,11 @@
                             <h4 class="title">TeleAddis</h4>
                         </div>
                         <ul class="footer-widget-menu-list">
-                            <li><a href="/terms">Privacy Policy</a></li>
-                            <li><a href="/terms">Terms & Conditions</a></li>
-                            <li><a href="/faq">Course FAQ’s</a></li>
-                            <li><a href="/about">About Us</a></li>
-                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="/terms">{{__('Privacy Policy')}}</a></li>
+                            <li><a href="/terms">{{__('Terms & Conditions')}}</a></li>
+
+                            <li><a href="/about">{{__('About')}}</a></li>
+                            <li><a href="/contact">{{__('Contact Us')}}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 footer-border">
                     <div class="single-footer-menu-item footer-item-space">
                         <div class="footer-widget-title">
-                            <h4 class="title">Categories</h4>
+                            <h4 class="title">{{__('Categories')}}</h4>
                         </div>
                         <ul class="footer-widget-menu-list">
                             @foreach(\App\Models\BlogCategory::allCategories() as $category)
@@ -77,12 +77,12 @@
                 <div class="col-lg-12">
                     <div class="footer-widget-top">
                         <div class="info-text-box">
-                            <h6 class="sub-title">ALL SOLUTION IN ONE</h6>
-                            <h3 class="title">Unlimited Advice, Tutorial & Resource</h3>
+                            <h6 class="sub-title">{{__('ALL SOLUTION IN ONE')}}</h6>
+                            <h3 class="title">{{__('Unlimited')}} {{__('Advice')}}, {{__('Tutorial')}} & {{__('Resource')}}</h3>
                         </div>
 
                         <div class="button-right-box mb-20">
-                            <a href="#!" class="btn-primary btn-bg-white btn-large">Share your thinking <i class="icofont-long-arrow-right"></i></a>
+                            <a href="#!" class="btn-primary btn-bg-white btn-large">{{__('Share your thinking')}} <i class="icofont-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
