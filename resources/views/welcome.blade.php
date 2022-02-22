@@ -106,7 +106,7 @@
                                         </div>
 
                                         <h1 class="title"><a href="/blog/1">
-                                                Moving Toward an Interconnected Africa. </a>
+                                           We Care About Your Phone  </a>
                                         </h1>
                                     </div>
                                 </div>
