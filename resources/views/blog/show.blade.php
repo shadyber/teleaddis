@@ -19,7 +19,7 @@
                             <div class="blog-details-meta-box">
                                 <div class="post-meta-left-side mb-2">
                                     <div class="trending-blog-post-category">
-                                        <a href="#">{{$blog->Category->title}}</a>
+                                        <a href="#">{{__($blog->Category->title)}}</a>
                                     </div>
                                     <div class="following-blog-post-author">
                                         By <a href="#">{{$blog->user->name}}</a>
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                             <h3 class="following-blog-post-title">
-                                <a href="#">{{$blog->title}}
+                                <a href="#">{{__($blog->title)}}
                                 </a>
                             </h3>
                             <div class="post-details-text">
@@ -50,7 +50,7 @@
                             </div>
                             <!-- Comment Area Start -->
                             <div class="comment-area section-space--pt_60">
-                                <div class="section-title">  <h3>Comments</h3></div>
+                                <div class="section-title">  <h3>{{__('Comments')}}</h3></div>
 
                                 @foreach($blog->blogComments as $comment)
 
@@ -68,7 +68,7 @@
                                                     <h6>{{$comment->user->name}}</h6> <span> {{$comment->created_at->diffForHumans()}} </span>
                                                 </div>
                                                 <p>{{$comment->comment}}</p>
-                                                <a href="#" class="reply-btn">Reply</a>
+                                                <a href="#" class="reply-btn">{{__('Reply')}}</a>
                                             </div>
                                         </div>
                                         <!-- End of Single Comment -->
@@ -85,8 +85,10 @@
                                                         <div class="comment-author-name">
                                                             <h6>Helen Sharp</h6> <span> 5 Jan 2019 at 6:58 pm </span>
                                                         </div>
-                                                        <p>On recommend tolerably my belonging or am. Mutual has cannot back beauty indeed now back sussex merely you. </p>
-                                                        <a href="#" class="reply-btn">Reply</a>
+                                                        <p>
+
+                                                        </p>
+                                                        <a href="#" class="reply-btn">{{__('Reply')}}</a>
                                                     </div>
                                                 </div>
                                                 <!-- End of Single Comment -->
@@ -98,7 +100,7 @@
                                 @endforeach
 
                                 <div class="section-title">
-                                    <h3 class="title">Leave a comment</h3>
+                                    <h3 class="title">Leave a {{__('Comment')}}</h3>
                                 </div>
                                 @auth
                                     <form action="/comment" method="post" class="comment-form-area">
@@ -107,12 +109,12 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="">
-                                                    <input type="text" class="single-input" name="name" placeholder="Name" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
+                                                    <input type="text" class="single-input form-control" name="name" placeholder="Name" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="">
-                                                    <input type="email" class="single-input" placeholder="Email" name="email" placeholder="Email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}" readonly>
+                                                    <input type="email" class="single-input form-control" placeholder="{{__('Email')}}" name="email" placeholder="Email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}" readonly>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
@@ -122,7 +124,7 @@
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="submit-button text-center">
-                                                    <button class="btn-large btn-primary" type="submit"> Submit Now <i class="icofont-long-arrow-right"></i></button>
+                                                    <button class="btn-large btn-primary" type="submit"> {{__('Submit')}} <i class="icofont-long-arrow-right"></i></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -130,7 +132,7 @@
                                 @endauth
 
                                 @guest
-                                    <a href="/login"> Login  </a>or |<a href="/register">Register </a> for Comment
+                                    <a href="/login"> {{__('Login')}}  </a> or |<a href="/register">{{__('Register')}} </a> for Comment
                                 @endguest
 
                             </div>
@@ -168,17 +170,28 @@
                                                                 <div class="post-meta-left-side">
                                             <span class="post-date">
                                             <i class="icofont-ui-calendar"></i>
+
                                             <a href="#">0{{$blog->created_at->diffForHumans()}}</a>
+
                                         </span>
                                                                     <span>10 min read</span>
+
                                                                 </div>
+
                                                                 <div class="post-meta-right-side">
+
                                                                     <a href="#"><img src="/assets/images/icons/small-bookmark.png" alt=""></a>
+
                                                                     <a href="#"><img src="/assets/images/icons/heart.png" alt=""></a>
+
                                                                 </div>
+
                                                             </div>
+
                                                         </div>
+
                                                     </div><!-- Single Following Post End -->
+
                                                 </div>
 
                                             @endforeach
@@ -198,7 +211,7 @@
                         </div>
                         <div class="author-title">
                             <h4><a href="#">TeleAddis</a></h4>
-                            <p>Author, Super Admin</p>
+                            <p>{{__('Author')}}, Super Admin</p>
                         </div>
                         <div class="author-details">
                             <p>Teleaddis provide daily update on technology .</p>
@@ -224,7 +237,7 @@
                             <a class="single-hero-category-item">
                                 <img src="{{$category->icon}}" alt="">
                                 <div class="hero-category-inner-box">
-                                    <h3 class="title">{{$category->title}}</h3>
+                                    <h3 class="title">{{__($category->title)}}</h3>
                                     <i class="icon icofont-long-arrow-right"></i>
                                 </div>
                             </a>
@@ -236,7 +249,7 @@
                     <div class="latest-post-inner-wrap mt-5">
                         <div class="latest-post-header">
                             <div class="section-title">
-                                <h4>Latest Post</h4>
+                                <h4>{{__('Latest')}} {{__('Post')}}</h4>
                             </div>
                             <div class="latest-post-slider-navigation">
                                 <div class="latest-post-button-prev navigation-button" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-a1092155aa14feb9d"><i class="icofont-long-arrow-left"></i></div>
