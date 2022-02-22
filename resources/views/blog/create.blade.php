@@ -69,7 +69,7 @@
         </div>
         <div class="form-group mb-4">
             <div class="col-sm-12">
-                <button class="btn btn-success">Post Article</button>
+                <button class="btn btn-success">{{__('Post')}}</button>
             </div>
         </div>
     </form>
@@ -80,10 +80,10 @@
                 <th>
                     <tr>
                         <td>id</td>
-                        <td>Img</td>
-                        <td>title</td>
-                        <td>detail</td>
-                        <td>action</td>
+                        <td>{{__('Image')}}</td>
+                        <td>{{__('Title')}}</td>
+                        <td>{{__('Detail')}}</td>
+                        <td>{{__('Action')}}</td>
                     </tr>
 
                 </th>
@@ -96,17 +96,17 @@
                         <td>{{$blog->title}}</td>
                         <td>{{substr(strip_tags($blog->detail),0,100)}}</td>
                         <td>
-                            <a href="/blog/{{$blog->id}}/edit" class="btn btn-primary"> Edit</a>
+                            <a href="/blog/{{$blog->id}}/edit" class="btn btn-primary"> {{__('Edit')}}</a>
                             <form id="delete-form" method="POST" class="form-inline" action="/blog/{{$blog->id}}">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
 
                                 <div class="form-group">
-                                    <input type="submit" class="btn btn-sm btn-danger" value="Delete Article">
+                                    <input type="submit" class="btn btn-sm btn-danger" value="{{__('Delete')}}">
                                 </div>
                             </form>
 
-                            <a href="/blog/{{$blog->slug}}" class="btn btn-info" target="_blank"> Show</a>
+                            <a href="/blog/{{$blog->slug}}" class="btn btn-info" target="_blank"> {{__('Show')}}</a>
                         </td>
                     </tr>
                 @endforeach

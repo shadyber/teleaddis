@@ -67,21 +67,9 @@
 
 </head>
 
-
-
-
 <body class="theme-color-four">
 
-
-
-
-
-
 @include('components.header')
-
-
-
-
 <div id="main-wrapper">
     <div class="site-wrapper-reveal">
 
@@ -107,7 +95,7 @@
 
                                         <h1 class="title"><a href="/blog">
                                            We Care About Your Phone  </a>
-                                            <p></p>
+                                            <p>Join our community for more information on smart phone and current technology</p>
                                         </h1>
                                     </div>
                                 </div>
@@ -180,7 +168,7 @@
                                         <span class="post-date">
                                         <a href="#">{{$blog->created_at->diffForHumans()}}</a>
                                     </span>
-                                    <span>10 min read</span>
+                                    <span>{{$blog->visit}} read</span>
                                 </div>
                             </div>
                         </div>
@@ -213,7 +201,7 @@
                                         <span class="post-date">
                                         <a href="#">{{$blog->created_at->diffForHumans()}}</a>
                                     </span>
-                                        <span>10 min read</span>
+                                        <span>{{$blog->visit}} read</span>
                                     </div>
                                 </div>
                             </div>
@@ -248,7 +236,7 @@
                                         <span class="post-date">
                                         <a href="#">{{$blog->created_at->diffForHumans()}}</a>
                                     </span>
-                                        <span>10 min read</span>
+                                        <span>{{$blog->visit}} read</span>
                                     </div>
                                 </div>
                             </div>

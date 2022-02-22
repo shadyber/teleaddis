@@ -71,7 +71,7 @@
     </div>
     <div class="form-group mb-4">
         <div class="col-sm-12">
-            <button class="btn btn-success">Update Article</button>
+            <button class="btn btn-success">{{__('Update')}}</button>
         </div>
     </div>
     {{Form::close()}}
