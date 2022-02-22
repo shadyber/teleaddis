@@ -10,7 +10,7 @@
                 </a>
 
             </div>
-            <h6>Post Your Video</h6>
+            <h6>{{__('Post')}} {{__('Your')}} {{__('Video')}}</h6>
         </div>
     </div>
 
@@ -23,7 +23,7 @@
                 <input type="hidden" name="videoId" id="videoId" value="xxx">
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="url  ">Video Url:  </label>
+                    <label class="control-label col-sm-2" for="url  ">{{__('Video')}} Url:  </label>
                     <div class="col-sm-10"><small> Ctrl + V to Past</small>
                         <input type="url" class="form-control" id="url" name="url" placeholder="Video Url" onchange="getVideo();">
                     </div>
@@ -31,9 +31,9 @@
 
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="title">Title:</label>
+                    <label class="control-label col-sm-2" for="title">{{__('Title')}}:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title" required>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="{{__('Enter')}} {{__('Title')}}" required>
                     </div>
                 </div>
 
@@ -42,18 +42,18 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="detail">Detail Text</label>
                     <div class="col-sm-10">
-                <textarea class="form-control" id="detail" name="detail" placeholder="Enter detail" required>
+                <textarea class="form-control" id="detail" name="detail" placeholder="{{__('Enter')}} {{__('Detail')}}" required>
                 </textarea>
                     </div>
                 </div>
 
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="blog_category_id">Category:</label>
+                    <label class="control-label col-sm-2" for="blog_category_id">{{__('Category')}}:</label>
                     <div class="col-sm-10">
                         <select name="blog_category_id" class="form-control p-0 border-0   @error('blog_category_id') is-invalid @enderror" name="blog_category_id">
                             @foreach(\App\Models\BlogCategory::allCategories() as $category)
-                                <option value="{{$category->id}}">{{$category->title}}</option>
+                                <option value="{{$category->id}}">{{__($category->title)}}</option>
                             @endforeach
                         </select>
                     </div>
