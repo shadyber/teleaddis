@@ -17,6 +17,7 @@ class Blog extends Model
         'detail',
         'photo',
         'thumb',
+        'lang',
         'slug',
         'tags',
         'user_id',
@@ -51,21 +52,23 @@ class Blog extends Model
 
 
     public static function lastN($n){
-        return Blog::orderBy('id', 'desc')->take($n)->get();
+        return Blog::where('lang',config('app.locale'))->orderBy('id','desc')->take($n)->get();
     }
 
     public static function trandinN($n){
-        return Blog::orderBy('visit', 'desc')->take($n)->get();
+        return Blog::where('lang',config('app.locale'))->orderBy('visit', 'desc')->take($n)->get();
     }
 
 
     public static function popularN($n){
-        return Blog::orderBy('visit', 'desc')->take($n)->get();
+        return Blog::where('lang',config('app.locale'))->orderBy('visit', 'desc')->take($n)->get();
     }
 
     public static function featuredN($n){
         return Blog::query()
-            ->where('tags', 'LIKE', "%featured %")->orderBy('id','desc')
+            ->where('tags', 'LIKE', "%featured %")
+            ->where('lang',config('app.locale'))
+            ->orderBy('id','desc')
 
             ->get();
 

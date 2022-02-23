@@ -27,6 +27,7 @@ class CreateVideosTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->on('users')->references('id');
             $table->string('slug', 255)->unique();
+            $table->string('lang')->default('en');
             $table->string('tags')->nullable();
             $table->integer('visit')->default(0);
             $table->timestamps();

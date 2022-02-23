@@ -28,8 +28,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-
-        $blogs= Blog::orderBy('id','desc')->paginate(9);
+        $blogs= Blog::where('lang', config('app.locale'))->paginate(9);
         return view('blog.index')->with(['blogs'=>$blogs])->with('error','You Don\'t Have This Permissions');
     }
 
@@ -97,6 +96,7 @@ class BlogController extends Controller
                 'photo'=>'/images/blog/'.$newImageName,
                 'thumb'=>'/images/blog/thumbnails/'.$newImageName,
                 'tags'=>$request->input('tags'),
+                'lang'=>$request->input('lang'),
 
                 'user_id'=>auth()->user()->id,
 

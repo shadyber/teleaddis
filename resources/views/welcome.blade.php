@@ -71,12 +71,6 @@
 
 @include('components.header')
 <div id="main-wrapper">
-
-
-
-
-
-
     <div class="site-wrapper-reveal">
 
         <!-- Hero Area Start -->
@@ -100,7 +94,7 @@
                                         </div>
 
                                         <h1 class="title"><a href="/blog">
-                                           We Care About Your Phone  </a>
+                                                We Care About Your Phone  </a>
 
                                         </h1>
                                     </div>
@@ -138,8 +132,8 @@
                         <div class="hero-four-category">
                             <div class="category-step-1" data-aos="fade-up">
                                 @foreach(\App\Models\BlogCategory::all() as $category)
-                                <a href="/category/{{$category->slug}}" class="btn-primary-four btn-large">{{__($category->title)}} </a>
-                                    @endforeach
+                                    <a href="/category/{{$category->slug}}" class="btn-primary-four btn-large">{{__($category->title)}} </a>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -154,37 +148,36 @@
 
                 <div class="row row--30">
                     @foreach(\App\Models\Blog::lastN(2) as $blog)
-                      <div class="@if(($i++%2)==0) col-lg-8 @else col-lg-4 @endif">
-                        <!-- Single Most Populer Item Start -->
-                        <div class="single-most-populer-item" data-aos="fade-up">
-                            <a href="#!" class="most-populer-thum">
-                                <img src="{{$blog->thumb}}" alt="{{$blog->title}}" />
-                            </a>
-                            <div class="most-populer-content">
-                                <div class="most-populer-post-author">
-                                    By <a href="#">{{$blog->user->name}}</a>
-                                </div>
-                                <h3 class="title"><a href="/blog/{{$blog->slug}}">{{$blog->title}}</a>
-                                </h3>
-                                <p class="dec mt-2">{{substr(strip_tags($blog->detail),0,150)}}</p>
-                                <div class="most-populer-post-meta">
+                        <div class="@if(($i++%2)==0) col-lg-8 @else col-lg-4 @endif">
+                            <!-- Single Most Populer Item Start -->
+                            <div class="single-most-populer-item" data-aos="fade-up">
+                                <a href="#!" class="most-populer-thum">
+                                    <img src="{{$blog->thumb}}" alt="{{$blog->title}}" />
+                                </a>
+                                <div class="most-populer-content">
+                                    <div class="most-populer-post-author">
+                                        By <a href="#">{{$blog->user->name}}</a>
+                                    </div>
+                                    <h3 class="title"><a href="/blog/{{$blog->slug}}">{{$blog->title}}</a>
+                                    </h3>
+                                    <p class="dec mt-2">{{substr(strip_tags($blog->detail),0,150)}}</p>
+                                    <div class="most-populer-post-meta">
                                         <span class="post-date">
                                         <a href="#">{{$blog->created_at->diffForHumans()}}</a>
                                     </span>
-                                    <span>{{$blog->visit}} {{__('read')}}</span>
+                                        <span>{{$blog->visit}} {{__('read')}}</span>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- Single Most Populer Item End -->
                         </div>
-                        <!-- Single Most Populer Item End -->
-                    </div>
 
                     @endforeach
 
                 </div>
 
                 <div class="row row--30">
-
-                     @foreach(\App\Models\Blog::popularN(2) as $blog)
+                    @foreach(\App\Models\Blog::popularN(2) as $blog)
 
 
 
@@ -459,13 +452,10 @@
 <!-- <script src="assets/js/vendor/vendor.min.js"></script>
 <script src="assets/js/plugins/plugins.min.js"></script> -->
 
-<script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
-</script>
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- Main JS -->
+<script src="/assets/js/main.js"></script>
+
 
 </body>
 

@@ -20,6 +20,7 @@ class Video extends Model
         'thumb_small',
         'iframe',
         'slug',
+        'lang',
         'tags',
         'user_id',
         'blog_category_id',

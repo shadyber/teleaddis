@@ -9,7 +9,8 @@
         <div class="form-group mb-4">
             <label class="col-md-12 p-0">{{__('Title')}}</label>
             <div class="col-md-12 border-bottom p-0">
-                <input type="text" name="title" placeholder="{{__('Title')}}" class="form-control p-0 border-0   @error('title') is-invalid @enderror" required> </div>
+                <input type="text" name="title" placeholder="{{__('Title')}}" class="form-control p-0 border-0   @error('title') is-invalid @enderror" required>
+            </div>
             @error('title')
             <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
@@ -35,6 +36,27 @@
                 <input type="text" name="tags" placeholder="{{__('Tags')}}," name="tags" class="form-control p-0 border-0   @error('tags') is-invalid @enderror">
             </div>
             @error('tags')
+            <span class="invalid-feedback" role="alert">
+                     <strong>{{ $message }}</strong>
+                    </span>
+            @enderror
+        </div>
+
+          <div class="form-group mb-4">
+            <label class="col-md-12 p-0">{{__('Language')}}</label>
+            <div class="col-md-12 border-bottom p-0">
+                <select name="lang" placeholder="{{__('Language')}}," name="lang" class="form-control p-0 border-0   @error('lang') is-invalid @enderror">
+                    {{ Config::get('languages')[App::getLocale()] }}
+                    <option value="en">English</option>
+
+                    @foreach (Config::get('languages') as $lang => $language)
+
+                            <option value="{{$lang}}"> {{__($language)}}</option>
+
+                    @endforeach
+                </select>
+            </div>
+            @error('lang')
             <span class="invalid-feedback" role="alert">
                      <strong>{{ $message }}</strong>
                     </span>

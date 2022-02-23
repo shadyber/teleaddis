@@ -2,8 +2,6 @@
 @section('title','List Blog')
 @section('content')
 
-
-
     <div class="blog-details-wrapper section-space--ptb_80">
         <div class="container">
             <div class="row row--17">

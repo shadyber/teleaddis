@@ -27,7 +27,7 @@ class VideoController extends Controller
     public function index()
     {
 
-        $vidos= Video::orderBy('id','desc')->paginate(9);
+        $vidos= Video::where('lang',config('app.locale'))->orderBy('id','desc')->paginate(9);
         return view('video.index')->with(['videos'=>$vidos])->with('error','You Don\'t Have This Permission');
 
     }
@@ -78,6 +78,7 @@ class VideoController extends Controller
 
                 'tags'=>$request->input('tags'),
                 'url'=>$request->input('url'),
+                'lang'=>$request->input('lang'),
                 'videoId'=>$request->input('videoId'),
                 'iframe'=>$request->input('iframe'),
                 'thumb_small'=>$request->input('thumb_small'),
