@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title',$video->title)
-@section('image','https://info251.com/'.$video->thumb_big)
+@section('image','https://teleaddis.com/'.$video->thumb_big)
 @section('detail',$video->detail)
 
 @section('content')

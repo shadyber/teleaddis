@@ -48,6 +48,7 @@
                                     @endforeach
                                 </div>
                             </li>
+
                         </ul>
                     </nav>
                 </div>
@@ -57,6 +58,9 @@
                             <span class="new-notification"></span>
                             <img src="/assets/images/icons/notification-white.png" alt="">
                         </a>
+                    </div>
+                    <div class="d-sm-block d-none">
+                        <div id="google_translate_element"></div>
                     </div>
 
                     @if (Route::has('login'))
@@ -73,6 +77,8 @@
                     @endauth
 
                 @endif
+
+
 
                 <!-- mobile menu -->
                     <div class="mobile-navigation-icon icon-white d-block d-lg-none" id="mobile-menu-trigger">

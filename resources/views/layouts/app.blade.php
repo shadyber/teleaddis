@@ -13,10 +13,18 @@
     <link rel="canonical" href="#" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="teleAddis - Blog HTML Template" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:image" content="" />
+    <meta property="og:title" content="teleAddis - @yield('title')" />
+
+    <!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+    <meta property="og:url"           content="@yield('url')" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="@yield('title')" />
+    <meta property="og:description"   content="@yield('detail')" />
+    <meta property="og:image"         content="@yield('image')" />
+
+
+    <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">

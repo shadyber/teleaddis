@@ -71,6 +71,12 @@
 
 @include('components.header')
 <div id="main-wrapper">
+
+
+
+
+
+
     <div class="site-wrapper-reveal">
 
         <!-- Hero Area Start -->
@@ -177,7 +183,8 @@
                 </div>
 
                 <div class="row row--30">
-                    @foreach(\App\Models\Blog::popularN(2) as $blog)
+
+                     @foreach(\App\Models\Blog::popularN(2) as $blog)
 
 
 
@@ -452,10 +459,13 @@
 <!-- <script src="assets/js/vendor/vendor.min.js"></script>
 <script src="assets/js/plugins/plugins.min.js"></script> -->
 
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+</script>
 
-<!-- Main JS -->
-<script src="/assets/js/main.js"></script>
-
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 
