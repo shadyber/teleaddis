@@ -362,7 +362,6 @@
         </div>
         <!-- Testimonial Area End -->
 
-
         <!-- Related Newsletter Area Start -->
         <div class="related-newsletter-area section-space--ptb_120">
             <div class="container">
@@ -412,9 +411,6 @@
 
 
 
-
-
-
 <!-- JS
 ============================================ -->
 <!-- Modernizer JS -->
@@ -456,6 +452,15 @@
 <!-- Main JS -->
 <script src="/assets/js/main.js"></script>
 
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#myModal').modal('show');
+
+        
+    });
+
+ 
+</script>
 
 </body>
 

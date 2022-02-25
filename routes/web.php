@@ -67,8 +67,15 @@ Route::get('/migrate', function (){
     \Illuminate\Support\Facades\Artisan::call('migrate');
 });
 
+
+Route::get('/migrate', function (){
+    return view('welcome')->with("success","You are succesfully unsubscribe ");
+});
+
+
 Route::resource('/comment', BlogCommentController::class);
 Route::resource('/newsletters', NewsletterController::class);
+
 
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 
@@ -185,6 +192,9 @@ Route::get('sitemap', function() {
 
     }
 
+    
     // show your sitemap (options: 'xml' (default), 'html', 'txt', 'ror-rss', 'ror-rdf')
-    return $sitemap->render('xml');
+    return $sitemap->render('txt');
 });
+
+

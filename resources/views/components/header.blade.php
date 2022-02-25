@@ -1,6 +1,25 @@
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">SMS "Ok" to 9723</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
 
-
-
+        Once you subscribed to our website or service you can use for free for 3 days then will charge 1 birr per day untill you send unsubscription request . 
+        you can send unsubscribe request by clicking "unsubscribe" link on the home page.
+        </p>
+      </div>
+      <div class="modal-footer"> 
+       
+      </div>
+    </div>
+  </div>
+</div>
 <!--========  header area =========-->
 <header class="header-four position--absolute">
 
