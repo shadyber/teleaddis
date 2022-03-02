@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-
+                    <p>Once you subscribed to our website or service you can use for free for 3 days then will charge 1 birr per day untill you send unsubscription request .</p>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

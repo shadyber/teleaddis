@@ -1,24 +1,14 @@
 @extends('layouts.app')
 @section('content')
     <section>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 align-content-between">
-                    <form action="javascript:void(0);" class="form-subsription">
-
-
-                        <div class="fw-col-sm-6 fw-col-md-12"><input type="text" placeholder="Your Name *" class="style1"></div>
-                        <div class="fw-col-sm-6 fw-col-md-12"><input type="text" placeholder="Your Tel *" class="style1"></div>
-                        <div class="fw-col-sm-6 fw-col-md-12"><input type="text" placeholder="Your Email" class="style1"></div>
-
-                        <div class="fw-col-sm-6 fw-col-md-12">
-                            <input type="submit" value="Subscribe">
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-        </div>
+      <div class="container">
+          <div class="col-md-12">
+              <h3>SMS "OK" to 9723</h3>
+              <h4>Join Free Today and Use Free For Three Days</h4>
+              <p> After SMS "OK" to 9723 from your mobile phone Please register your new account to this website to access all features of our application
+              </p>  <p> Thank You For Using Our Application</p>
+              <p>  </p>
+          </div>
+      </div>
     </section>
 @endsection

@@ -44,7 +44,7 @@ Route::resource('/category', BlogCategoryController::class);
 
 Route::resource('/contact',ContactUsController::class);
 
-Route::get('/subscribe',function (){
+Route::get('/subscribenow',function (){
     return view('subscribe');
 });
 
@@ -192,7 +192,7 @@ Route::get('sitemap', function() {
 
     }
 
-    
+
     // show your sitemap (options: 'xml' (default), 'html', 'txt', 'ror-rss', 'ror-rdf')
     return $sitemap->render('txt');
 });
