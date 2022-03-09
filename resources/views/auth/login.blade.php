@@ -6,12 +6,12 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-                    <p>Once you subscribed to our website or service you can use for free for 3 days then will charge 1 birr per day untill you send unsubscription request .</p>
+                    <p class="p-15 offset-2">Once you subscribed to our website or service you can use for free for 3 days then will charge 2 birr per day untill you send unsubscription request .|</p>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        <div class="form-group row pt-2">
                             <label for="email" class="col-md-4 col-form-label text-md-right single-input">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
@@ -24,8 +24,21 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group row pt-2">
+                            <label for="tel" class="col-md-4 col-form-label text-md-right single-input">{{ __('Phone Number') }}</label>
 
-                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input id="tel" type="tel" class="form-control @error('tel') is-invalid @enderror" name="tel" value="{{ old('tel') }}" required autocomplete="tel" autofocus>
+
+                                @error('tel')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row pt-2">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -42,11 +55,15 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    <input class="" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
+
+                                    <div class="col-md-10">
+                                        <input type="checkbox" value="I Agree To The Terms and Conditions."> I Agree To The Terms and Conditions.
+                                    </div>
                                 </div>
                             </div>
                         </div>
