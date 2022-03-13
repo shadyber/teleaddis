@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
@@ -32,7 +32,7 @@
                     <div class="col-md-8">
                         <h2>Basic Information</h2>
 
-                        <form action="{{route('profile')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{url('/profile')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control" placeholder="Full Name" value={{Auth::user()->name}}>

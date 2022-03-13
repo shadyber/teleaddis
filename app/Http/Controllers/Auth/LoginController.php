@@ -1,10 +1,13 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Models\User;
+
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 
 class LoginController extends Controller
 {
@@ -28,6 +31,7 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+
     /**
      * Create a new controller instance.
      *
@@ -36,5 +40,29 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->user = new User;
+    }
+
+    public function login(Request $request)
+    {
+        // Check validation
+        $this->validate($request, [
+            'tel' => 'required',
+        ]);
+
+        // Get user record
+        $user = User::where('tel', $request->get('tel'))->first();
+
+        // Check Condition Mobile No. Found or Not
+        if($request->get('tel') != $user->tel) {
+            \Session::put('errors', 'Your mobile number not match in our system..!!');
+            return back();
+        }
+
+        // Set Auth Details
+        \Auth::login($user);
+
+        // Redirect home page
+        return redirect()->route('welcome');
     }
 }

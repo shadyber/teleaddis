@@ -31,11 +31,10 @@ use Illuminate\Support\Facades\URL;
 Route::get('/', function () {
 
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
-Auth::routes(['verify' => true]);
  Route::get('/userprofile', [ProfileController::class, 'index'])->name('userprofile');
 
 Route::resource('/blog', BlogController::class);
@@ -90,11 +89,10 @@ Route::get('/newapp', function (){
     echo 'initialized';
 });
 
-Route::resource('/home', App\Http\Controllers\HomeController::class);
-
-Route::group(['middleware' => 'role:admin'], function() {
 
     Route::resource('/profile', App\Http\Controllers\ProfileController::class);
+Route::group(['middleware' => 'role:admin'], function() {
+
     Route::resource('/dashboard', App\Http\Controllers\ProfileController::class);
     Route::resource('/home', App\Http\Controllers\ProfileController::class);
     Route::resource('/user', UserController::class);

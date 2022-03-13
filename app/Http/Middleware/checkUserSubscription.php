@@ -23,20 +23,7 @@ protected $auth;
     public function handle(Request $request, Closure $next)
     {
 
-     if ($this->auth->check())
-      {
 
-                 $subscribed_at=$this->auth->user()->created_at->diffInDays() - today()->diffInDays();
-
-                if ($this->auth->user()->isSubscribed == 'yes' || $subscribed_at<=3)
-                {
-                    return $next($request);
-                }
-            }
-            else{
-            return new RedirectResponse(url('/register'));
-            }
-            return new RedirectResponse(url('/subscribenow'));
     }
 
 }

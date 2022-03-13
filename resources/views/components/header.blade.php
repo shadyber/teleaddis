@@ -10,12 +10,13 @@
       <div class="modal-body">
         <p>
 
-        Once you subscribed to our website or service you can use for free for 3 days then will charge 1 birr per day untill you send unsubscription request . 
+        Once you subscribed to our website or service you can use for free for 3 days then will charge 1 birr per day untill you send unsubscription request .
         you can send unsubscribe request by clicking "unsubscribe" link on the home page.
         </p>
       </div>
-      <div class="modal-footer"> 
-       
+      <div class="modal-footer">
+          <a href="sms://9723?body=ok" class="btn btn-outline-primary">Send a SMS Ok
+              Now</a>
       </div>
     </div>
   </div>
@@ -78,13 +79,26 @@
                             <img src="/assets/images/icons/notification-white.png" alt="">
                         </a>
                     </div>
-                  
+
 
                     @if (Route::has('login'))
 
                         @auth
-                            <a href="{{ url('/home') }}" class="sign-up-action-button btn-medium btn">{{__('Home')}}</a>
-                            <a href="{{route('logout')}}"><span class="fa-power-off"></span></a>
+
+                            <a href="{{ url('/profile') }}" class="sign-up-action-button btn-medium btn">{{__('Home')
+                            }}</a>
+
+
+                            <a href="{{ route('logout') }}" class="profile-pic"
+                               onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                                <i class="fa fa-power-off"></i>  <span class="fa fa-power-off">X</span>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+
+                            </a>
                         @else
                             <a href="{{ route('login') }}" class="sign-up-action-button btn-medium btn">{{__('Login')}}</a>
 
