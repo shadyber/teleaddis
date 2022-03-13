@@ -43,7 +43,7 @@ $header=$request->header('Authorization');
 if(empty($header)){
 
   return response(['result' => false,'message'=>'API requested without authorization header!']);
-}else if(!$header='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkV0aGlvdGVsIiwiaWF0IjoxNTE2MjM5MDIyfQ.A2m08nnDojpTPuTrAZDY3ntgBuMv6WwG3_syEEu7dDU'){
+}else if(!$header='Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkV0aGlvdGVsIiwiaWF0IjoxNTE2MjM5MDIyfQ.A2m08nnDojpTPuTrAZDY3ntgBuMv6WwG3_syEEu7dDU'){
 
   return response(['result' => false,'message'=>'API requested  authorization header invalid!']);
 }
@@ -129,14 +129,46 @@ dd($request);
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $user)
+
+    public function destroy(Request $request)
     {
-        //
+       $header=$request->header('Authorization');
+       if(empty($header)){
+
+         return response(['result' => false,'message'=>'API requested without authorization header!']);
+       }else if(!$header='Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkV0aGlvdGVsIiwiaWF0IjoxNTE2MjM5MDIyfQ.A2m08nnDojpTPuTrAZDY3ntgBuMv6WwG3_syEEu7dDU'){
+
+         return response(['result' => false,'message'=>'API requested  authorization header invalid!']);
+       }
+
+
+           $data = $request->validate([
+               'tel' => 'required',
+              ]);
+
+                  // Get user record
+                      $user = User::where('tel', $request->get('tel'))->first();
+
+
+
+                      // Check Condition Mobile No. Found or Not
+                      if(!$user) {
+              // Get user record
+                      $user = User::where('email', $request->get('tel'))->first();
+               if(!$user) {
+
+                          return response()->json([
+                                      'message' => 'Phone Number not found in our database',
+                                      'result'  => false
+                                  ]); }
+                      }
+
+
+      $user->delete();
+
+ return response()->json([
+             'message' => 'User Removed from Our Database',
+             'result'  => true
+         ]);
     }
 }

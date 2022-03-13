@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/register', [App\Http\Controllers\api\RegistrationController::class, 'store']);
+Route::post('/unregister', [App\Http\Controllers\api\RegistrationController::class, 'destroy']);
