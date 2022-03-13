@@ -15,7 +15,7 @@
         </p>
       </div>
       <div class="modal-footer">
-          <a href="sms://9723?body=ok" class="btn btn-outline-primary">Send a SMS Ok
+          <a href="sms://9723&body=ok" class="btn btn-outline-primary">Send a SMS Ok
               Now</a>
       </div>
     </div>

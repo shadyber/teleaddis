@@ -53,10 +53,16 @@ class LoginController extends Controller
         // Get user record
         $user = User::where('tel', $request->get('tel'))->first();
 
+
+
         // Check Condition Mobile No. Found or Not
-        if($request->get('tel') != $user->tel) {
-            \Session::put('errors', 'Your mobile number not match in our system..!!');
-            return back();
+        if(!$user) {
+// Get user record
+        $user = User::where('email', $request->get('tel'))->first();
+ if(!$user) {
+
+            return redirect()->back()->with(['error'=>'Credential Not Found in our database']);
+            }
         }
 
         // Set Auth Details

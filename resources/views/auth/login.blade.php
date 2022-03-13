@@ -22,7 +22,7 @@
 
                                   <div class="col-md-6">
                                       <input id="tel" type="tel" class="form-control @error('tel') is-invalid
-@enderror" name="tel" value="{{ old('tel') }}" required autocomplete="tel" autofocus>
+@enderror" name="tel" value="" required   autofocus>
 
                                       @error('tel')
                                       <span class="invalid-feedback" role="alert">
