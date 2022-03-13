@@ -39,15 +39,27 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
+$header=$request->header('Authorization');
+if(empty($header)){
+
+  return response(['result' => false,'message'=>'API requested without authorization header!']);
+}else if(!$header='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkV0aGlvdGVsIiwiaWF0IjoxNTE2MjM5MDIyfQ.A2m08nnDojpTPuTrAZDY3ntgBuMv6WwG3_syEEu7dDU'){
+
+  return response(['result' => false,'message'=>'API requested  authorization header invalid!']);
+}
 
 
     $data = $request->validate([
         'tel' => 'required',
        ]);
-$name=$request['name'] ? $request['name'] : $request['tel'];
-$email=$request['email'] ? $request['email'] : $request['tel'].'@teleaddis.com';
-$tel=$request['tel'];
-$password=rand(1000,9999);
+
+
+        $name=$request['name'] ? $request['name'] : $request['tel'];
+        $email=$request['email'] ? $request['email'] : $request['tel'].'@teleaddis.com';
+        $tel=$request['tel'];
+        $password=rand(1000,9999);
+
+
   $user = new User();
 try{
 

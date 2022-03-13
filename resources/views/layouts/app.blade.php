@@ -116,7 +116,7 @@
     </div>
 
     <div class="site-wrapper-reveal">
-
+@include('layouts.flash_message')
         @yield('content')
 
     </div>
