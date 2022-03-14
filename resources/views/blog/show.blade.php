@@ -47,6 +47,13 @@
                             </h3>
                             <div class="post-details-text">
                                 {!! $blog->detail !!}
+
+
+                                <div class="fb-like" data-href="https://teleaddis.com/blog/{{$blog->slug}}"
+                                     data-width="10"
+                                     data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+
+
                             </div>
                             <!-- Comment Area Start -->
                             <div class="comment-area section-space--pt_60">
