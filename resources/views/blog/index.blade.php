@@ -1,7 +1,7 @@
 @extends('layouts.app')
-@section('title','List of all amazing articles from teleaddis.com')
-@section('detail','List of all amazing articles from teleaddis.com')
-@section('image',$blogs->last()->photo)
+@section('title',\App\Models\Blog::find(rand(1,count(\App\Models\Blog::all())))->title)
+@section('detail',\App\Models\Blog::find(rand(1,count(\App\Models\Blog::all())))->detail)
+@section('image',\App\Models\Blog::find(rand(1,count(\App\Models\Blog::all())))->photo)
 @section('content')
 
     <div class="blog-details-wrapper section-space--ptb_80">
