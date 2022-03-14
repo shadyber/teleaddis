@@ -1,9 +1,16 @@
 @extends('layouts.app')
-@section('title','List Blog')
+@section('title','List of all amazing articles from teleaddis.com')
+@section('detail','List of all amazing articles from teleaddis.com')
+@section('image',$blogs->last()->photo)
 @section('content')
 
     <div class="blog-details-wrapper section-space--ptb_80">
         <div class="container">
+            <div class="fb-like" data-href="https://teleaddis.com/blog"
+                 data-width="10"
+                 data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+
+
             <div class="row row--17">
 
 

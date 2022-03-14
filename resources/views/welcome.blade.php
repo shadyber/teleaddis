@@ -68,6 +68,9 @@
 </head>
 
 <body class="theme-color-four">
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0&appId=1241046355944849&autoLogAppEvents=1" nonce="PUKJWDi2"></script>
+
 
 @include('components.header')
 <div id="main-wrapper">
@@ -248,6 +251,11 @@
                 <div class="button-box mt-5 text-center" data-aos="fade-up">
                     <a href="/blog" class="btn-primary btn-large btn-bg-4">{{__('Show More')}} <i class="icofont-long-arrow-right"></i></a>
                 </div>
+
+                <div class="fb-like" data-href="https://teleaddis.com"
+                     data-width="10"
+                     data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+
 
             </div>
         </div>
@@ -456,10 +464,10 @@
     $(window).on('load', function() {
         $('#myModal').modal('show');
 
-        
+
     });
 
- 
+
 </script>
 
 </body>
