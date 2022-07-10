@@ -54,6 +54,34 @@
                             @endforeach
                         </ul>
                     </li>
+
+                   @auth
+
+                        <li class="has-children">
+                            <a href="#">{{__('Profile')}}</a>
+                            <ul class="sub-menu">
+                                <li>      <a href="{{ route('logout') }}" class="profile-pic"
+                                             onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                                        <i class="fa fa-power-off"></i>  <span class="fa fa-power-off">Logout</span>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+
+                                    </a></li>
+
+                                <li><a href="/profile"><span>Home</span></a> </li>
+
+                            </ul>
+                        </li>
+                       @else
+                      <li>  <a href="{{ route('login') }}" class="">{{__('Login')}}</a>
+                        </li>
+                    @if (Route::has('register'))
+                           <li>  <a href="{{ route('register') }}" class="">{{__('Register')}}</a>
+                            </li> @endif
+                    @endauth
                 </ul>
             </nav>
         </div>

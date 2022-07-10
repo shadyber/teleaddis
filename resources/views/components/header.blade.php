@@ -73,32 +73,30 @@
                     </nav>
                 </div>
                 <div class="header-four-right-side">
-                    <div class="d-sm-block d-none">
-                        <a href="#!" class="single-action-item">
-                            <span class="new-notification"></span>
-                            <img src="/assets/images/icons/notification-white.png" alt="">
-                        </a>
-                    </div>
+
 
 
                     @if (Route::has('login'))
 
                         @auth
-
+                            <li>
                             <a href="{{ url('/profile') }}" class="sign-up-action-button btn-medium btn">{{__('Home')
-                            }}</a>
-
-
-                            <a href="{{ route('logout') }}" class="profile-pic"
-                               onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                                <i class="fa fa-power-off"></i>  <span class="fa fa-power-off">X</span>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-
+                            }}
                             </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('logout') }}" class="sign-up-action-button btn-medium btn"
+                                   onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                                    <i class="fa fa-power-off"></i>  <span class="fas fa-power-off">Logout</span>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+
+                                </a>
+                            </li>
                         @else
                             <a href="{{ route('login') }}" class="sign-up-action-button btn-medium btn">{{__('Login')}}</a>
 
