@@ -20,12 +20,12 @@
                               @csrf
 
                               <div class="form-group row pt-2">
-                                  <label for="tel" class="col-md-4 col-form-label text-md-right single-input">{{ __
+                                  <label for="tel" class="col-md-4 col-form-label text-md-right single-input" >{{ __
                                   ('Phone Number') }}</label>
 
                                   <div class="col-md-6">
                                       <input id="tel" type="tel" class="form-control @error('tel') is-invalid
-@enderror" name="tel" value="" required   autofocus>
+@enderror" name="tel" placeholder="09------" required   autofocus>
 
                                       @error('tel')
                                       <span class="invalid-feedback" role="alert">
