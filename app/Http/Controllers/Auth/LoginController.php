@@ -50,18 +50,24 @@ class LoginController extends Controller
             'tel' => 'required',
         ]);
 
+
+        $tel=$request->get('tel');
+
+        $country_code='+251';
+        $tel = preg_replace("/^\+?{$country_code}/", '0',$tel);
+
         // Get user record
-        $user = User::where('tel', $request->get('tel'))->first();
+        $user = User::where('tel',$tel)->first();
 
 
 
         // Check Condition Mobile No. Found or Not
         if(!$user) {
 // Get user record
-        $user = User::where('email', $request->get('tel'))->first();
+        $user = User::where('email', $tel)->first();
  if(!$user) {
 
-            return redirect()->back()->with(['error'=>'Credential Not Found in our database']);
+            return redirect()->back()->with(['error'=>'Credential not found in our database']);
             }
         }
 
