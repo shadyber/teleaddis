@@ -53,13 +53,14 @@ namespace App\Http\Controllers\api;
           'password' => 'required'
         ]);
 
-
-          $name=$request['name'] ? $request['name'] : $request['tel'];
-          $email=$request['email'] ? $request['email'] : $request['tel'].'@teleaddis.com';
           $tel=$request['tel'];
-          $password=$request['password'];;
           $country_code='+251';
           $tel = preg_replace("/^\+?{$country_code}/", '0',$tel);
+
+          $name=$request['name'] ? $request['name'] : $tel;
+          $email=$request['email'] ? $request['email'] : $tel.'@teleaddis.com';
+
+          $password=$request['password'];;
 
 
     $user = new User();
